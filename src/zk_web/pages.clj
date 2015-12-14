@@ -108,10 +108,10 @@
   (let [parent (if (.endsWith parent "/")
                  parent
                  (str parent "/"))]
-    [:div.span4
+    [:div.span6
      [:ul.nav.nav-tabs.nav-stacked
       [:div.row
-       [:div.span3 [:h3 "Children"]]
+       [:div.span5 [:h3 "Children"]]
        [:div.span1
         [:span.span1 (space 1)]
         [:span.label.label-info.pull-right (count children)]]]
@@ -121,7 +121,7 @@
         (map (fn [s] [:li (node-link (str parent s) s)]) children))]]))
 
 (defpartial node-stat [stat]
-  [:div.span4
+  [:div.span6
    [:table.table-striped.table-bordered.table
     [:tr [:h3 "Node Stat"]]
     (map (fn [kv]
@@ -131,9 +131,9 @@
          stat)]])
 
 (defpartial node-data [path data]
-  [:div.span4
+  [:div.span12
    [:div.row
-    [:div.span3 [:h3 "Node Data"]]
+    [:div.span11 [:h3 "Node Data"]]
     [:div.span1
      [:span.span1 (space 1)]
      [:span.label.label-info (count data) " byte(s)"]]]
@@ -238,7 +238,8 @@
           (nav-bar path)
           [:div.row
            (node-children path children)
-           (node-stat stat)
+           (node-stat stat)]
+          [:div.row
            (node-data path data)]
           (when-admin
            [:div#adminZone
