@@ -19,7 +19,7 @@ Meet with zk-web at [http://localhost:8080](http://localhost:8080)! I'am sure it
 Or you can run it using Docker:
 
 ```bash
-docker run -d -p 8080:8080 frostman/zk-web
+docker run -d -p 8080:8080 mafc/zk-web
 ```
 
 ## Configuration
