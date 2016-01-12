@@ -38,7 +38,7 @@
 (defn ls
   "List children of a node"
   [cli path]
-  (-> cli (.getChildren) (.forPath path)))
+  (-> cli (.getChildren) (.forPath path) sort))
 
 (defn stat
   "Get stat of a node, return nil if no such node"
